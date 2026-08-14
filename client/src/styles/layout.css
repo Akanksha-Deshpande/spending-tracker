@@ -330,6 +330,22 @@
     background: #f8fafc;
 }
 
+.sidebar-name {
+    margin: 0 0 4px;
+    
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar-email {
+    margin: 0 0 14px;
+    text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 
 /* =========================
    Responsive

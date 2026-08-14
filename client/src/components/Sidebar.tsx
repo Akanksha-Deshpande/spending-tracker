@@ -119,16 +119,17 @@ function Sidebar() {
                             ?.charAt(0)
                             .toUpperCase() ?? "U"}
                     </div>
-
-                    <div className="sidebar-user-details">
-                        <span className="sidebar-user-label">
-                            Signed in as
-                        </span>
+                    <div>
+                        <p className="sidebar-name">
+                            {user?.name}
+                        </p>
 
                         <p className="sidebar-email">
                             {user?.email}
                         </p>
                     </div>
+
+
                 </div>
 
                 <button

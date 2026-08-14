@@ -3,6 +3,7 @@ import { apiRequest } from "./client";
 export interface User {
     id: string;
     email: string;
+    name: string;
 }
 
 interface LoginResponse {

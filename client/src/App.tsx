@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AppLayout from "./layouts/AppLayout";
 import { useAuth } from "./context/AuthContext";
+import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Categories from "./pages/Categories";
@@ -20,6 +21,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />}/>
                 <Route path="/" element={<ProtectedRoute><AppLayout /></ProtectedRoute> }>
                 <Route index element={<Navigate to="/dashboard" replace />}/>
                     <Route path="dashboard" element={<Dashboard/>}/>
