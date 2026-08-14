@@ -1,0 +1,801 @@
+.actuals-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.actuals-page h1 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #1f2937;
+}
+
+/* =========================
+   Create Actual
+   ========================= */
+
+.create-actual-section {
+    margin-bottom: 28px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: #f9fafb;
+}
+
+.create-actual-header {
+    margin-bottom: 18px;
+}
+
+.create-actual-header h2 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.create-actual-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* =========================
+   Create Form
+   ========================= */
+
+.actual-form {
+    display: grid;
+    grid-template-columns: 1fr 160px 150px 1.5fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.actual-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.actual-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.actual-field select,
+.actual-field input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-family: inherit;
+
+    background-color: white;
+    color: #374151;
+
+    outline: none;
+}
+
+.actual-field select {
+    cursor: pointer;
+}
+
+.actual-field select:focus,
+.actual-field input:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.1);
+}
+
+.actual-field select:invalid {
+    color: #6b7280;
+}
+
+.actual-field input::placeholder {
+    color: #9ca3af;
+}
+
+/* =========================
+   Month Input
+   ========================= */
+
+.month-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.month-input-wrapper input[type="month"] {
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 42px;
+
+    padding: 10px 42px 10px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-family: inherit;
+
+    background-color: white;
+    color: #374151;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.month-input-wrapper input[type="month"]:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.1);
+}
+
+/* Hide native browser icon */
+
+.month-input-wrapper
+input[type="month"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+
+    cursor: pointer;
+
+    position: absolute;
+    right: 0;
+
+    width: 40px;
+    height: 100%;
+}
+
+/* Custom calendar icon */
+
+.month-icon {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 16px;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+/* =========================
+   Add Actual Button
+   ========================= */
+
+.actual-form > button {
+    align-self: end;
+
+    height: 42px;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #4f46e5;
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.actual-form > button:hover {
+    background-color: #4338ca;
+}
+
+.actual-form > button:disabled {
+    background-color: #a5b4fc;
+    cursor: not-allowed;
+}
+
+/* =========================
+   Errors
+   ========================= */
+
+.actual-error {
+    margin: 12px 0;
+
+    padding: 10px 12px;
+
+    border-radius: 6px;
+
+    background-color: #fef2f2;
+    color: #b91c1c;
+
+    border: 1px solid #fecaca;
+
+    font-size: 14px;
+}
+
+.actual-loading {
+    margin: 20px 0;
+    color: #6b7280;
+}
+
+/* =========================
+   Empty State
+   ========================= */
+
+.actuals-empty-state {
+    margin-top: 24px;
+
+    padding: 40px 24px;
+
+    text-align: center;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    background-color: #f9fafb;
+}
+
+.actuals-empty-state h2 {
+    margin: 0 0 8px;
+
+    font-size: 18px;
+    color: #374151;
+}
+
+.actuals-empty-state p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* =========================
+   Actuals By Month
+   ========================= */
+
+.actual-month-section {
+    margin-bottom: 28px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    background-color: white;
+
+    overflow: hidden;
+}
+
+/* =========================
+   Month Header
+   ========================= */
+
+.actual-month-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 16px 18px;
+
+    background-color: #f9fafb;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.actual-month-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.actual-month-heading h2 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #1f2937;
+}
+
+/* =========================
+   Month Status
+   ========================= */
+
+.actual-status-locked,
+.actual-status-open {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.actual-status-locked {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+.actual-status-open {
+    background-color: #f0fdf4;
+    color: #15803d;
+}
+
+/* =========================
+   Month Lock Button
+   ========================= */
+
+.month-lock-button,
+.month-unlock-button {
+    min-width: 130px;
+
+    height: 38px;
+
+    padding: 0 14px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.month-lock-button {
+    border: 1px solid #c7d2fe;
+
+    background-color: #eef2ff;
+    color: #4338ca;
+}
+
+.month-lock-button:hover {
+    background-color: #e0e7ff;
+}
+
+.month-lock-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================
+   Unlock Controls
+   ========================= */
+
+.month-unlock-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.unlock-note-input {
+    width: 240px;
+
+    box-sizing: border-box;
+
+    height: 38px;
+
+    padding: 9px 11px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    background-color: white;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-family: inherit;
+
+    outline: none;
+}
+
+.unlock-note-input:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.1);
+}
+
+.unlock-note-input:disabled {
+    background-color: #f9fafb;
+}
+
+.month-unlock-button {
+    border: 1px solid #fecaca;
+
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+.month-unlock-button:hover {
+    background-color: #fee2e2;
+}
+
+.month-unlock-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================
+   Month Error
+   ========================= */
+
+.actual-month-error {
+    margin: 0;
+
+    padding: 10px 18px;
+
+    border-bottom: 1px solid #fecaca;
+
+    background-color: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 13px;
+}
+
+/* =========================
+   Actuals Table
+   ========================= */
+
+.actuals-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background-color: white;
+}
+
+.actuals-table {
+    width: 100%;
+
+    min-width: 800px;
+
+    border-collapse: collapse;
+}
+
+/* =========================
+   Table Header
+   ========================= */
+
+.actuals-table th {
+    padding: 13px 16px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #6b7280;
+}
+
+/* =========================
+   Table Cells
+   ========================= */
+
+.actuals-table td {
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #f3f4f6;
+
+    color: #374151;
+
+    vertical-align: middle;
+
+    font-size: 14px;
+}
+
+.actuals-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.actuals-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* =========================
+   Columns
+   ========================= */
+
+.actual-category {
+    min-width: 130px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.actual-amount {
+    min-width: 120px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    white-space: nowrap;
+}
+
+.actual-note {
+    min-width: 220px;
+
+    color: #6b7280;
+}
+
+/* =========================
+   Actions
+   ========================= */
+
+.actual-actions {
+    display: flex;
+
+    justify-content: space-around;
+
+    gap: 8px;
+
+    min-width: 160px;
+}
+
+.actual-actions button {
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+/* =========================
+   Edit
+   ========================= */
+
+.actual-edit-button {
+    background-color: #eef2ff;
+
+    color: #4338ca;
+
+    border: 1px solid #c7d2fe;
+}
+
+.actual-edit-button:hover {
+    background-color: #e0e7ff;
+}
+
+/* =========================
+   Delete
+   ========================= */
+
+.actual-delete-button {
+    background-color: #fef2f2;
+
+    color: #dc2626;
+
+    border: 1px solid #fecaca;
+}
+
+.actual-delete-button:hover {
+    background-color: #fee2e2;
+}
+
+/* =========================
+   Edit Inputs
+   ========================= */
+
+.actual-edit-amount {
+    width: 110px;
+
+    box-sizing: border-box;
+
+    padding: 8px 10px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.actual-edit-note {
+    width: 100%;
+
+    min-width: 180px;
+
+    box-sizing: border-box;
+
+    padding: 8px 10px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+.actual-edit-amount:focus,
+.actual-edit-note:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.1);
+}
+
+/* =========================
+   Save
+   ========================= */
+
+.actual-save-button {
+    border: 1px solid #16a34a;
+
+    background-color: #16a34a;
+
+    color: white;
+}
+
+.actual-save-button:hover {
+    background-color: #15803d;
+}
+
+.actual-save-button:disabled {
+    background-color: #86efac;
+
+    border-color: #86efac;
+
+    cursor: not-allowed;
+}
+
+/* =========================
+   Cancel
+   ========================= */
+
+.actual-cancel-button {
+    border: 1px solid #d1d5db;
+
+    background-color: white;
+
+    color: #374151;
+}
+
+.actual-cancel-button:hover {
+    background-color: #f3f4f6;
+}
+
+.actual-cancel-button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+}
+
+/* =========================
+   Locked Actions
+   ========================= */
+
+.actual-locked-actions {
+    color: #9ca3af;
+
+    font-size: 16px;
+}
+
+/* =========================
+   Bottom Errors
+   ========================= */
+
+.actuals-page > .actual-error {
+    margin-top: 12px;
+}
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 800px) {
+    .actuals-page {
+        padding: 20px;
+    }
+
+    .create-actual-section {
+        padding: 16px;
+    }
+
+    .actual-form {
+        grid-template-columns: 1fr;
+    }
+
+    .actual-form > button {
+        width: 100%;
+        height: 42px;
+    }
+
+    .actual-month-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 16px;
+    }
+
+    .actual-month-heading {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .month-lock-button,
+    .month-unlock-controls {
+        width: 100%;
+    }
+
+    .month-unlock-controls {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .unlock-note-input {
+        width: 100%;
+    }
+
+    .month-unlock-button,
+    .month-lock-button {
+        width: 100%;
+    }
+
+    .actuals-table-wrapper {
+        border-radius: 0;
+    }
+
+    .actuals-table {
+        min-width: 800px;
+    }
+
+    .actuals-table th,
+    .actuals-table td {
+        padding: 12px;
+    }
+
+    .actual-actions {
+        flex-wrap: wrap;
+    }
+
+    .actual-edit-amount {
+        width: 100px;
+    }
+
+    .actual-edit-note {
+        min-width: 160px;
+    }
+}

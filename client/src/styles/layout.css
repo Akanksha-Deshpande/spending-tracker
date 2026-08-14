@@ -1,0 +1,417 @@
+/* =========================
+   App Layout
+========================= */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+
+    background: #f8fafc;
+}
+
+
+/* =========================
+   Sidebar
+========================= */
+
+.sidebar {
+    position: sticky;
+    top: 0;
+
+    width: 250px;
+    min-width: 250px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    padding: 24px 16px;
+
+    background: #111827;
+    color: #ffffff;
+
+    border-right: 1px solid #1f2937;
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   Brand
+========================= */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 4px 8px 28px;
+
+    border-bottom: 1px solid #1f2937;
+}
+
+.sidebar-logo {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.sidebar-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.sidebar-subtitle {
+    margin: 4px 0 0;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-top: 28px;
+}
+
+.sidebar-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 44px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 8px;
+
+    color: #9ca3af;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.sidebar-link:hover {
+    background: #1f2937;
+    color: #ffffff;
+}
+
+.sidebar-link.active {
+    background: #1d4ed8;
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.sidebar-link.active:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   Navigation Icons
+========================= */
+
+.sidebar-link-icon {
+    width: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #9ca3af;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+.sidebar-link:hover .sidebar-link-icon {
+    color: #ffffff;
+}
+
+.sidebar-link.active .sidebar-link-icon {
+    color: #ffffff;
+}
+
+
+/* =========================
+   User Section
+========================= */
+
+.sidebar-user {
+    margin-top: auto;
+
+    padding-top: 16px;
+
+    border-top: 1px solid #1f2937;
+}
+
+.sidebar-user-info {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px;
+}
+
+.sidebar-avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #374151;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar-user-details {
+    min-width: 0;
+}
+
+.sidebar-user-label {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #6b7280;
+
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.sidebar-email {
+    margin: 0;
+
+    max-width: 165px;
+
+    overflow: hidden;
+
+    color: #d1d5db;
+
+    font-size: 12px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Logout
+========================= */
+
+.sidebar-logout {
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 12px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #374151;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #d1d5db;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.sidebar-logout:hover {
+    background: #1f2937;
+
+    border-color: #4b5563;
+
+    color: #ffffff;
+}
+
+.sidebar-logout:active {
+    background: #374151;
+}
+
+
+/* =========================
+   Main Content
+========================= */
+
+.app-content {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    background: #f8fafc;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .sidebar-title {
+        font-size: 14px;
+    }
+
+    .sidebar-subtitle {
+        display: none;
+    }
+
+    .sidebar-email {
+        max-width: 140px;
+    }
+}
+
+
+/* =========================
+   Small Screens
+========================= */
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 68px;
+        min-width: 68px;
+
+        padding: 20px 10px;
+    }
+
+    .sidebar-brand {
+        justify-content: center;
+
+        padding: 0 0 20px;
+    }
+
+    .sidebar-brand > div:last-child {
+        display: none;
+    }
+
+    .sidebar-nav {
+        margin-top: 20px;
+    }
+
+    .sidebar-link {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .sidebar-link span:last-child {
+        display: none;
+    }
+
+    .sidebar-link-icon {
+        width: auto;
+    }
+
+    .sidebar-user-info {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .sidebar-user-details {
+        display: none;
+    }
+
+    .sidebar-logout {
+        padding: 0;
+
+        font-size: 0;
+    }
+
+    .sidebar-logout span {
+        font-size: 18px;
+    }
+}

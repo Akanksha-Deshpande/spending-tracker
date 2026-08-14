@@ -1,0 +1,562 @@
+/* =========================
+   Dashboard
+========================= */
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+    color: #1f2937;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+
+/* =========================
+   Month Selector
+========================= */
+
+.month-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.month-selector label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.month-selector input[type="month"] {
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: white;
+    color: #374151;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.month-selector input[type="month"]:hover {
+    border-color: #9ca3af;
+}
+
+.month-selector input[type="month"]:focus {
+    border-color: #6366f1;
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* =========================
+   Month Selector
+========================= */
+
+.month-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.month-selector label {
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.dashboard-month-picker {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-month-picker input[type="month"] {
+    width: 170px;
+    height: 42px;
+    padding: 0 42px 0 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    outline: none;
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.dashboard-month-picker input[type="month"]:hover {
+    border-color: #9ca3af;
+}
+
+.dashboard-month-picker input[type="month"]:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/*
+ * Hide the browser's native calendar icon.
+ * We use our own icon instead.
+ */
+
+.dashboard-month-picker
+input[type="month"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+
+/* Custom calendar button */
+
+.dashboard-month-icon {
+    position: absolute;
+    right: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    color: #64748b;
+    font-size: 17px;
+
+    cursor: pointer;
+
+    border-radius: 0 8px 8px 0;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.dashboard-month-icon:hover {
+    background: #f1f5f9;
+    color: #2563eb;
+}
+
+.dashboard-month-icon:active {
+    background: #e2e8f0;
+}
+
+.dashboard-month-icon:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: -2px;
+}
+
+
+/* =========================
+   Loading / Error
+========================= */
+
+.dashboard > p {
+    margin: 16px 0;
+}
+
+.dashboard > p:first-of-type {
+    color: #6b7280;
+}
+
+.dashboard > p:not(:first-of-type) {
+    padding: 12px 14px;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+
+/* =========================
+   Report Month
+========================= */
+
+.dashboard > div > h2 {
+    margin: 0 0 18px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+
+/* =========================
+   Summary Cards
+========================= */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+
+/* Base card */
+
+.summary-card {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.summary-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #6366f1;
+}
+
+.summary-card:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Card label */
+
+.summary-card-label {
+    margin: 0 0 10px;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* Card value */
+
+.summary-card-value {
+    display: block;
+    margin: 0;
+    color: #111827;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+
+/* =========================
+   Individual Summary Cards
+========================= */
+
+/*
+ * These nth-child selectors give each
+ * summary card a subtle accent.
+ */
+
+.summary-card:nth-child(1)::before {
+    background-color: #6366f1;
+}
+
+.summary-card:nth-child(2)::before {
+    background-color: #0ea5e9;
+}
+
+.summary-card:nth-child(3)::before {
+    background-color: #f59e0b;
+}
+
+.summary-card:nth-child(4)::before {
+    background-color: #8b5cf6;
+}
+
+
+/* =========================
+   Categories Section
+========================= */
+
+.categories-section {
+    margin-top: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.categories-section h2 {
+    margin: 0;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+    color: #1f2937;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   Category Table
+========================= */
+
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.category-table thead {
+    background-color: white;
+}
+
+.category-table th {
+    padding: 13px 18px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
+.category-table td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    font-size: 14px;
+}
+
+.category-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.category-table tbody tr {
+    transition:
+        background-color 0.12s ease;
+}
+
+.category-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+
+/* =========================
+   Category Column
+========================= */
+
+.category-table td:first-child {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Numeric Columns
+========================= */
+
+.category-table td:nth-child(2),
+.category-table td:nth-child(3),
+.category-table td:nth-child(4),
+.category-table td:nth-child(5) {
+    white-space: nowrap;
+}
+
+
+/* Planned */
+
+.category-table td:nth-child(2) {
+    color: #374151;
+}
+
+
+/* Actual */
+
+.category-table td:nth-child(3) {
+    color: #111827;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Variance
+========================= */
+
+.category-table td:nth-child(4) {
+    font-weight: 700;
+}
+
+
+/*
+ * Positive variance = overspent
+ * Negative variance = under plan
+ *
+ * We cannot reliably select based on
+ * the numeric value with CSS alone, so
+ * CategoryReportRow gets additional
+ * classes below.
+ */
+
+
+/* =========================
+   Empty State
+========================= */
+
+.categories-section > p {
+    margin: 0;
+    padding: 32px 20px;
+    color: #6b7280;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+    .dashboard {
+        padding: 24px;
+    }
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 650px) {
+    .dashboard {
+        padding: 20px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 24px;
+    }
+
+    .month-selector {
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .month-selector input[type="month"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .summary-card {
+        padding: 18px;
+    }
+
+    .categories-section {
+        border-radius: 8px;
+    }
+
+    .category-table {
+        min-width: 650px;
+    }
+
+    .categories-section {
+        overflow-x: auto;
+    }
+
+    .categories-section h2 {
+        min-width: 650px;
+    }
+}
+
+/* =========================
+   Variance Colors
+========================= */
+
+.category-table .variance-negative {
+    color: #15803d;
+    font-weight: 700;
+}
+
+.category-table .variance-positive {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+.category-table .variance-neutral {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+/* =========================
+   Small Screens
+========================= */
+
+@media (max-width: 420px) {
+    .dashboard {
+        padding: 16px;
+    }
+
+    .summary-card-value {
+        font-size: 22px;
+    }
+
+    .category-table th,
+    .category-table td {
+        padding: 12px 14px;
+    }
+}
