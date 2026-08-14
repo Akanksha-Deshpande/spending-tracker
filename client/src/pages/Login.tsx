@@ -115,8 +115,16 @@ function Login() {
 
                 <div className="auth-footer">
                     <span>
-                        Spending Tracker
+                        Don't have an account?{" "}
                     </span>
+
+                    <button
+                        type="button"
+                        className="auth-link"
+                        onClick={() => navigate("/signup")}
+                    >
+                        Create an account
+                    </button>
                 </div>
             </div>
         </div>
